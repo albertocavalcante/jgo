@@ -3,13 +3,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_jar")
 
 def rules_antlr_fetch():
-    """Fetches the rules_antlr repository and its dependencies.
-
-    They have been manually cherry-picked from:
-
-     * https://github.com/marcohu/rules_antlr/blob/89a29cca479363a5aee53e203719510bdc6be6ff/docs/setup.md?plain=1#L81
-
-    """
+    """Fetches rules_antlr."""
     http_archive(
         name = "rules_antlr",
         sha256 = "26e6a83c665cf6c1093b628b3a749071322f0f70305d12ede30909695ed85591",
@@ -17,6 +11,14 @@ def rules_antlr_fetch():
         urls = ["https://github.com/marcohu/rules_antlr/archive/0.5.0.tar.gz"],
     )
 
+def rules_antlr_transitive_deps():
+    """Fetches rules_antlr dependencies.
+
+    They have been manually cherry-picked from:
+
+     * https://github.com/marcohu/rules_antlr/blob/89a29cca479363a5aee53e203719510bdc6be6ff/docs/setup.md?plain=1#L81
+
+    """
     http_jar(
         name = "javax_json",
         url = "https://jcenter.bintray.com/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar",
