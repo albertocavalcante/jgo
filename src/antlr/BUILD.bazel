@@ -1,0 +1,8 @@
+load("@rules_antlr//antlr:antlr4.bzl", "antlr")
+
+antlr(
+    name = "antlr_java",
+    srcs = glob(["*.g4"]),
+    language = "Go",
+    package = "generated",
+)
