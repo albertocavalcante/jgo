@@ -1,5 +1,7 @@
+.antlr
+
 # User-specific settings file for this repo
-.aspect/bazelrc/user.bazelrc
+.settings/bazelrc/user.bazelrc
 
 # Don't check in lockfile for now. It is unstable.
 # https://github.com/bazelbuild/bazel/issues/19026
