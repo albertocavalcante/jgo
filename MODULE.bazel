@@ -1,6 +1,7 @@
 """jgo"""
 
 bazel_dep(name = "aspect_bazel_lib", version = "2.7.8")
+bazel_dep(name = "rules_java", version = "7.6.5")
 
 non_bzlmod_dependencies = use_extension("//private:extensions.bzl", "non_bzlmod_dependencies")
 use_repo(non_bzlmod_dependencies, "rules_antlr")
