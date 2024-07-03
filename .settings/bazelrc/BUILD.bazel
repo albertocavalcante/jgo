@@ -11,4 +11,5 @@ write_aspect_bazelrc_presets(
         "debug",
         "performance",
     ],
+    tags = ["manual"],
 )
