@@ -1,0 +1,6 @@
+load("//private:repositories.bzl", "rules_antlr_fetch")
+
+rules_antlr_fetch()
+
+load("@rules_antlr//antlr:repositories.bzl", "rules_antlr_dependencies")
+rules_antlr_dependencies("4.8")
