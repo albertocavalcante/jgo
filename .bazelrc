@@ -1,0 +1,18 @@
+# Import global bazelrc presets settings by Aspect
+import %workspace%/.settings/bazelrc/bazel7.bazelrc
+import %workspace%/.settings/bazelrc/convenience.bazelrc
+import %workspace%/.settings/bazelrc/correctness.bazelrc
+import %workspace%/.settings/bazelrc/debug.bazelrc
+import %workspace%/.settings/bazelrc/performance.bazelrc
+
+### YOUR PROJECT SPECIFIC OPTIONS GO HERE ###
+# To stamp release builds, run with
+# --config=release
+common:release --stamp --workspace_status_command=./tools/workspace_status.sh
+
+
+# Load any settings & overrides specific to the current user from `.settings/bazelrc/user.bazelrc`.
+# This file should appear in `.gitignore` so that settings are not shared with team members. This
+# should be last statement in this config so the user configuration is able to overwrite flags from
+# this file. See https://bazel.build/configure/best-practices#bazelrc-file.
+try-import %workspace%/.settings/bazelrc/user.bazelrc
